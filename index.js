@@ -15,13 +15,11 @@ function checkIfNotEmpty() {
 function getBdayAsNumber(birthday) {
     let bday = birthday.split("-");
     let bdayAsNumber = 0;
-    let multiplier = 1;
 
     for (let i = 0; i < bday.length; i++) {
         let temp = bday[i].split("");
         for (let j = temp.length - 1; j >= 0; j--) {
-            bdayAsNumber = bdayAsNumber + temp[j] * multiplier;
-            multiplier = multiplier * 10;
+            bdayAsNumber = bdayAsNumber + Number(temp[j]);
         }
     }
     return bdayAsNumber;
